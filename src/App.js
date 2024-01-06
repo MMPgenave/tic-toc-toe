@@ -17,7 +17,7 @@ export default function Board() {
     const newArray = [...boardValues];
     if (typeX) {
       newArray[index] = "X";
-      setPlayer("نیلیه سپه خور");
+      setPlayer("  داش کیوان");
     } else {
       newArray[index] = "O";
       setPlayer("پروفسور محمد");
@@ -26,7 +26,7 @@ export default function Board() {
     setBoardValuesCopy(newArray);
     setTypeX(!typeX);
     setCount(count + 1);
-    const movement = { id: count, text: `حرکت ${count}`, boardStatus: newArray, player: typeX ? "نیلیه سپه خور" : "پروفسور محمد" };
+    const movement = { id: count, text: `حرکت ${count}`, boardStatus: newArray, player: typeX ? "  داش کیوان" : "پروفسور محمد" };
     const gameSnapShotCopy = gameSnapShot.slice(0, count);
     gameSnapShotCopy.push(movement);
     setGameSnapShot(gameSnapShotCopy);
@@ -100,12 +100,12 @@ export default function Board() {
       if (phase === "XXX") {
         setWinner("پروفسور محمد");
         setBoardValuesCopy(Array(9).fill(null))
-        return null;
+       
       }
       if (phase === "OOO") {
-        setWinner("نیله و گزو بردو");
+        setWinner("  داش کیوان");
         setBoardValuesCopy(Array(9).fill(null))
-        return null;
+       
 
       }
     });
